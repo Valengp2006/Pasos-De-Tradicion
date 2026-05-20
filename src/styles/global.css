@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta de colores */
+  --color-carbon: #0a0a0a;
+  --color-cuero: #4a3018;
+  --color-sepia: #8b5a2b;
+  --color-dorado: #c5a059;
+  --color-marfil: #f4ecd8;
+
+  /* Tipografías */
+  --font-cinzel: "Cinzel", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-garamond: "EB Garamond", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-carbon);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-carbon);
+}
+
+/* 1. Capa de ruido y textura cinematográfica inyectada por código */
+.capa-textura {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: color-dodge;
+}
+
+/* 2. Títulos con destello solemne (Efecto vela) */
+.texto-luminico {
+  text-shadow: 0 0 15px rgba(197, 160, 89, 0.4), 0 0 35px rgba(197, 160, 89, 0.2);
+}
+
+/* 3. Bordes rasgados/desgastados para las fotografías del archivo */
+.borde-rasgado {
+  mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='black' filter='url(%23displacement)'/%3E%3Cfilter id='displacement'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='2' result='noise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='noise' scale='12' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3C/svg%3E");
+  mask-size: cover;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='black' filter='url(%23displacement)'/%3E%3Cfilter id='displacement'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='2' result='noise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='noise' scale='12' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3C/svg%3E");
+  -webkit-mask-size: cover;
+}

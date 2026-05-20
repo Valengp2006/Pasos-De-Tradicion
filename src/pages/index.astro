@@ -1,17 +1,67 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Inicio">
+  <Hero />
+  
+  <section class="py-32 bg-carbon relative z-10 border-t border-marfil/5">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      
+      <div class="text-center mb-20 space-y-6">
+        <h2 class="font-cinzel text-3xl md:text-4xl text-dorado uppercase tracking-widest texto-luminico deslizar-arriba">Explora el Archivo</h2>
+        <div class="w-12 h-[1px] bg-dorado/30 mx-auto deslizar-arriba retraso-1"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <a href="/pasos-de-tradicion/proyecto" class="group block relative aspect-[4/3] borde-rasgado overflow-hidden flex items-end p-8 md:p-12 transition-transform duration-700 hover:scale-[1.01] deslizar-arriba">
+          <div class="absolute inset-0 bg-[url('/pasos-de-tradicion/assets/images/el-proyecto.png')] bg-cover bg-center transition-all duration-700 ease-out opacity-100 scale-100 group-hover:scale-105"></div>
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/70 to-transparent z-10"></div>
+          
+          <div class="relative z-20 space-y-3">
+            <span class="font-inter text-xs tracking-widest text-dorado uppercase">I. Investigación</span>
+            <h3 class="font-cinzel text-3xl md:text-4xl text-marfil uppercase tracking-wide group-hover:texto-luminico transition-all duration-500">El Proyecto</h3>
+            <p class="font-garamond text-lg text-marfil/90 line-clamp-2">Conoce la misión, la investigación documental y el corazón de los oficios tradicionales en Santa Fe de Antioquia.</p>
+          </div>
+        </a>
+
+        <a href="/pasos-de-tradicion/experiencia" class="group block relative aspect-[4/3] borde-rasgado overflow-hidden flex items-end p-8 md:p-12 transition-transform duration-700 hover:scale-[1.01] deslizar-arriba retraso-1">
+          <div class="absolute inset-0 bg-[url('/pasos-de-tradicion/assets/images/la-experiencia.png')] bg-cover bg-center transition-all duration-700 ease-out opacity-100 scale-100 group-hover:scale-105"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/70 to-transparent z-10"></div>
+          
+          <div class="relative z-20 space-y-3">
+            <span class="font-inter text-xs tracking-widest text-dorado uppercase">II. Inmersión</span>
+            <h3 class="font-cinzel text-3xl md:text-4xl text-marfil uppercase tracking-wide group-hover:texto-luminico transition-all duration-500">La Experiencia</h3>
+            <p class="font-garamond text-lg text-marfil/90 line-clamp-2">Explora las tres piezas narrativas: El Códice, La Cúpula y El Rastro de los Gestos.</p>
+          </div>
+        </a>
+
+        <a href="/pasos-de-tradicion/making-of" class="group block relative aspect-[4/3] borde-rasgado overflow-hidden flex items-end p-8 md:p-12 transition-transform duration-700 hover:scale-[1.01] deslizar-arriba">
+          <div class="absolute inset-0 bg-[url('/pasos-de-tradicion/assets/images/making-of.png')] bg-cover bg-center transition-all duration-700 ease-out opacity-100 scale-100 group-hover:scale-105"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/70 to-transparent z-10"></div>
+          
+          <div class="relative z-20 space-y-3">
+            <span class="font-inter text-xs tracking-widest text-dorado uppercase">III. Documental</span>
+            <h3 class="font-cinzel text-3xl md:text-4xl text-marfil uppercase tracking-wide group-hover:texto-luminico transition-all duration-500">Making Of</h3>
+            <p class="font-garamond text-lg text-marfil/90 line-clamp-2">El proceso creativo, técnico y humano detrás de la construcción de este archivo de memoria.</p>
+          </div>
+        </a>
+
+        <a href="/pasos-de-tradicion/equipo" class="group block relative aspect-[4/3] borde-rasgado overflow-hidden flex items-end p-8 md:p-12 transition-transform duration-700 hover:scale-[1.01] deslizar-arriba retraso-1">
+          <div class="absolute inset-0 bg-[url('/pasos-de-tradicion/assets/images/el-equipo.png')] bg-cover bg-center transition-all duration-700 ease-out opacity-100 scale-100 group-hover:scale-105"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/70 to-transparent z-10"></div>
+          
+          <div class="relative z-20 space-y-3">
+            <span class="font-inter text-xs tracking-widest text-dorado uppercase">IV. Autores</span>
+            <h3 class="font-cinzel text-3xl md:text-4xl text-marfil uppercase tracking-wide group-hover:texto-luminico transition-all duration-500">El Equipo</h3>
+            <p class="font-garamond text-lg text-marfil/90 line-clamp-2">El colectivo interdisciplinario de creadores que dio vida a Pasos de Tradición.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</Layout>
