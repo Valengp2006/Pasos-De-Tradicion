@@ -37,6 +37,21 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
+      <div class="space-y-4">
+        <span class="font-inter text-xs tracking-widest text-dorado uppercase">Teaser</span>
+        <div class="relative w-full aspect-video bg-black border border-marfil/10 overflow-hidden">
+          <video
+            class="w-full h-full object-cover"
+            controls
+            preload="metadata"
+            poster=""
+          >
+            <source src="/pasos-de-tradicion/assets/videos/teaser-codice.mp4" type="video/mp4" />
+            Tu navegador no soporta la reproducción de video.
+          </video>
+        </div>
+      </div>
+
       <div class="bg-gradient-to-b from-cuero/10 to-transparent p-8 border-l border-dorado/30 space-y-4">
         <h3 class="font-cinzel text-sm tracking-widest text-dorado uppercase">La Dimensión Acústica</h3>
         <p class="font-garamond text-lg text-marfil/70 italic text-justify">

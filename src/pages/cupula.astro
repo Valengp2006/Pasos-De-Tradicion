@@ -37,6 +37,20 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
+      <div class="space-y-4">
+        <span class="font-inter text-xs tracking-widest text-dorado uppercase">Teaser</span>
+        <div class="relative w-full aspect-video bg-black border border-marfil/10 overflow-hidden">
+          <video
+            class="w-full h-full object-cover"
+            controls
+            preload="metadata"
+          >
+            <source src="/pasos-de-tradicion/assets/videos/teaser-cupula.mp4" type="video/mp4" />
+            Tu navegador no soporta la reproducción de video.
+          </video>
+        </div>
+      </div>
+
       <div class="pt-8 text-center md:text-left">
         <a href="/pasos-de-tradicion" class="font-inter text-xs tracking-widest text-marfil/40 hover:text-marfil uppercase transition-colors duration-300">
           ← Volver a la exposición principal

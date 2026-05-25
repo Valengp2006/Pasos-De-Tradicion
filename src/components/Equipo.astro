@@ -2,37 +2,42 @@
 const team = [
   {
     name: "Valentina Garzón Pérez",
+    foto: "valentina",
     role: "Desarrollo narrativo y audiovisual — El Códice de los Pasos",
     description: "Participó en la construcción narrativa y audiovisual, la escritura del guion y secuencias mediante IA. Desarrolló la implementación técnica de chroma key en Unity y la arquitectura del sitio web."
   },
   {
     name: "Thomas Aguirre García",
+    foto: "thomas",
     role: "Diseño de experiencia y planeador de narrativas — Cúpula de Legados",
     description: "A cargo del prototipado de interacciones en el domo y el desarrollo conceptual usando Blender y TouchDesigner, conectando narrativamente las experiencias."
   },
   {
     name: "Juan José Hoyos Peláez",
+    foto: "juan-jose-hoyos",
     role: "Modelado 3D y diseño sonoro — Cúpula de Legados",
     description: "A cargo del modelado 3D del domo geodésico y la construcción del paisaje sonoro, integrando arquitectura efímera e inmersión acústica."
   },
   {
     name: "Juan José Machado Miranda",
+    foto: "juan-jose-machado",
     role: "Conceptualización, puesta en escena y sonido — El Rastro de los Gestos",
     description: "A cargo de la conceptualización performática, dirección de movimientos, composición visual de las sombras y atmósfera auditiva del proyecto."
   },
   {
     name: "José Alzate",
+    foto: "jose",
     role: "Post producción, edición y refinación de audio — El Rastro de los Gestos",
     description: "Consolidó la experiencia visual y auditiva mediante la edición, tratamiento visual de escenas y la mezcla de audio para fortalecer la inmersión."
   },
   {
     name: "Pascualtobias Rendon Giraldo",
+    foto: "pascualtobias",
     role: "Desarrollo técnico e integración en Unity — El Códice de los Pasos",
     description: "A cargo de la programación del flujo interactivo en realidad aumentada, integración de elementos en Unity y testeo de prototipos en Android."
   }
 ];
 
-// Ordenar el arreglo alfabéticamente por el nombre
 team.sort((a, b) => a.name.localeCompare(b.name));
 ---
 <section id="equipo" class="py-32 bg-carbon border-t border-marfil/10 relative z-10">
@@ -47,16 +52,24 @@ team.sort((a, b) => a.name.localeCompare(b.name));
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {team.map((member, index) => (
-        <div class={`group p-8 border border-marfil/10 bg-[#0a0a0a] hover:border-dorado/50 transition-colors duration-500 flex flex-col space-y-4 deslizar-arriba retraso-${(index % 3) + 1}`}>
+        <div class={`group p-8 border border-marfil/10 bg-[#0a0a0a] hover:border-dorado/50 transition-colors duration-500 flex flex-col items-center space-y-4 deslizar-arriba retraso-${(index % 3) + 1}`}>
           
+          <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-dorado/30 flex-shrink-0">
+            <img
+              src={`/pasos-de-tradicion/assets/images/${member.foto}.jpeg`}
+              alt={member.name}
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+
           <button class="btn-expandir w-full text-left flex justify-between items-start gap-4 focus:outline-none cursor-pointer">
             <h3 class="font-cinzel text-2xl md:text-3xl text-marfil tracking-wide group-hover:texto-luminico transition-all duration-300">{member.name}</h3>
             <span class="icono-estado font-inter text-dorado text-3xl font-light leading-none transform transition-transform duration-500 ease-in-out mt-1">+</span>
           </button>
           
-          <p class="font-inter text-sm md:text-base tracking-wider text-dorado/80 leading-relaxed">{member.role}</p>
+          <p class="font-inter text-sm md:text-base tracking-wider text-dorado/80 leading-relaxed w-full">{member.role}</p>
           
-          <div class="contenedor-texto grid grid-rows-[0fr] transition-all duration-500 ease-in-out opacity-0">
+          <div class="contenedor-texto grid grid-rows-[0fr] transition-all duration-500 ease-in-out opacity-0 w-full">
             <div class="overflow-hidden">
               <p class="font-garamond text-marfil/70 text-lg leading-relaxed text-justify mt-4 pt-4 border-t border-marfil/10">
                 {member.description}
@@ -70,7 +83,7 @@ team.sort((a, b) => a.name.localeCompare(b.name));
 
     <div class="text-center mt-32 deslizar-arriba retraso-2">
       <p class="font-cormorant italic text-3xl text-dorado/80">
-        “Toda memoria necesita manos que decidan preservarla.”
+        "Toda memoria necesita manos que decidan preservarla."
       </p>
     </div>
   </div>
@@ -87,13 +100,11 @@ team.sort((a, b) => a.name.localeCompare(b.name));
         const icono = boton.querySelector('.icono-estado');
         
         if (contenedorTexto.classList.contains('grid-rows-[0fr]')) {
-          // ABRIR
           contenedorTexto.classList.remove('grid-rows-[0fr]', 'opacity-0');
           contenedorTexto.classList.add('grid-rows-[1fr]', 'opacity-100');
           icono.classList.add('rotate-45'); 
           icono.classList.replace('text-dorado', 'text-marfil');
         } else {
-          // CERRAR
           contenedorTexto.classList.add('grid-rows-[0fr]', 'opacity-0');
           contenedorTexto.classList.remove('grid-rows-[1fr]', 'opacity-100');
           icono.classList.remove('rotate-45'); 
