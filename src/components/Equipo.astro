@@ -14,13 +14,13 @@ const team = [
   },
   {
     name: "Juan José Hoyos Peláez",
-    foto: "juan-jose-hoyos",
+    foto: "hoyos",
     role: "Modelado 3D y diseño sonoro — Cúpula de Legados",
     description: "A cargo del modelado 3D del domo geodésico y la construcción del paisaje sonoro, integrando arquitectura efímera e inmersión acústica."
   },
   {
     name: "Juan José Machado Miranda",
-    foto: "juan-jose-machado",
+    foto: "machado",
     role: "Conceptualización, puesta en escena y sonido — El Rastro de los Gestos",
     description: "A cargo de la conceptualización performática, dirección de movimientos, composición visual de las sombras y atmósfera auditiva del proyecto."
   },
@@ -62,20 +62,13 @@ team.sort((a, b) => a.name.localeCompare(b.name));
             />
           </div>
 
-          <button class="btn-expandir w-full text-left flex justify-between items-start gap-4 focus:outline-none cursor-pointer">
-            <h3 class="font-cinzel text-2xl md:text-3xl text-marfil tracking-wide group-hover:texto-luminico transition-all duration-300">{member.name}</h3>
-            <span class="icono-estado font-inter text-dorado text-3xl font-light leading-none transform transition-transform duration-500 ease-in-out mt-1">+</span>
-          </button>
-          
-          <p class="font-inter text-sm md:text-base tracking-wider text-dorado/80 leading-relaxed w-full">{member.role}</p>
-          
-          <div class="contenedor-texto grid grid-rows-[0fr] transition-all duration-500 ease-in-out opacity-0 w-full">
-            <div class="overflow-hidden">
-              <p class="font-garamond text-marfil/70 text-lg leading-relaxed text-justify mt-4 pt-4 border-t border-marfil/10">
-                {member.description}
-              </p>
-            </div>
-          </div>
+          <h3 class="font-cinzel text-2xl md:text-3xl text-marfil tracking-wide text-center group-hover:texto-luminico transition-all duration-300">{member.name}</h3>
+
+          <p class="font-inter text-sm md:text-base tracking-wider text-dorado/80 leading-relaxed text-center">{member.role}</p>
+
+          <p class="font-garamond text-marfil/70 text-lg leading-relaxed text-justify pt-4 border-t border-marfil/10 w-full">
+            {member.description}
+          </p>
 
         </div>
       ))}
@@ -88,29 +81,3 @@ team.sort((a, b) => a.name.localeCompare(b.name));
     </div>
   </div>
 </section>
-
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const botones = document.querySelectorAll('.btn-expandir');
-    
-    botones.forEach(boton => {
-      boton.addEventListener('click', () => {
-        const tarjeta = boton.closest('.group');
-        const contenedorTexto = tarjeta.querySelector('.contenedor-texto');
-        const icono = boton.querySelector('.icono-estado');
-        
-        if (contenedorTexto.classList.contains('grid-rows-[0fr]')) {
-          contenedorTexto.classList.remove('grid-rows-[0fr]', 'opacity-0');
-          contenedorTexto.classList.add('grid-rows-[1fr]', 'opacity-100');
-          icono.classList.add('rotate-45'); 
-          icono.classList.replace('text-dorado', 'text-marfil');
-        } else {
-          contenedorTexto.classList.add('grid-rows-[0fr]', 'opacity-0');
-          contenedorTexto.classList.remove('grid-rows-[1fr]', 'opacity-100');
-          icono.classList.remove('rotate-45'); 
-          icono.classList.replace('text-marfil', 'text-dorado');
-        }
-      });
-    });
-  });
-</script>
